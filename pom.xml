@@ -18,6 +18,8 @@
         <junit.version>4.13.1</junit.version>
 
         <testng.version>7.8.0</testng.version>
+
+        <jupiter.version>5.10.0</jupiter.version>
     </properties>
 
   <dependencies>
@@ -35,6 +37,15 @@
           <version>${testng.version}</version>
           <scope>test</scope>
       </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>${jupiter.version}</version>
+          <scope>test</scope>
+      </dependency>
+
 
   </dependencies>
 </project>
