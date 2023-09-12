@@ -17,7 +17,7 @@ public class HumanReadableDurationFormat {
         outTime.put("year", years);
 
         int days;
-        if (years > 0) { // 31 736 000 => 200 000
+        if (years > 0) {
             days = (seconds % 31_536_000) / 86400;
         } else {
             days = seconds / 86400;
