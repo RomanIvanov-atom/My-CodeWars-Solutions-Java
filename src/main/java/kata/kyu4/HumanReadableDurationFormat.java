@@ -1,6 +1,9 @@
 package kata.kyu4;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class HumanReadableDurationFormat {
     public static String formatDuration(int seconds) {
@@ -8,10 +11,10 @@ public class HumanReadableDurationFormat {
             return "now";
         }
 
-        Map<String, Integer> outTime = new HashMap<>();
+        Map<String, Integer> outTime = new LinkedHashMap<>();
 
         int years = seconds / 3600 / 24 / 365;
-        outTime.put("years", years);
+        outTime.put("year", years);
 
         int days;
         if (years > 0) { // 31 736 000 => 200 000
@@ -19,54 +22,46 @@ public class HumanReadableDurationFormat {
         } else {
             days = seconds / 86400;
         }
-        outTime.put("days", days);
+        outTime.put("day", days);
 
         int hours = seconds / 3600;
         hours = hours - years * 8760 - days * 24;
-        outTime.put("hours", hours);
+        outTime.put("hour", hours);
 
         int minutes = seconds / 60;
         minutes = minutes - years * 525600 - days * 1440 - hours * 60;
-        outTime.put("minutes", minutes);
+        outTime.put("minute", minutes);
 
         int outSeconds = seconds - years * 31_536_000 - days * 86400 - hours * 3600 - minutes * 60;
-        outTime.put("seconds", outSeconds);
+        outTime.put("second", outSeconds);
 
         List<String> itemsList = new ArrayList<>();
 
         for (Map.Entry<String, Integer> entry : outTime.entrySet()) {
             if (entry.getValue() != 0) {
-                itemsList.add(entry.getKey());
+                itemsList.add(toFormattedString(entry.getKey(), entry.getValue()));
             }
         }
 
         StringBuilder output = new StringBuilder();
+        output.append(itemsList.get(0));
+
         if (itemsList.size() == 1) {
-            return "TEMP stub";
+            return output.toString();
+        }
+        for (int i = 1; i < itemsList.size(); i++) {
+            if (i < itemsList.size() - 1) {
+                output.append(", ");
+            } else {
+                output.append(" and ");
+            }
+            output.append(itemsList.get(i));
         }
 
-
-
-
-
-
-
-
-
-
-        return String.format("%s, %s, %s, %s, %s",
-                toFormattedString("year", outTime.get("years")),
-                toFormattedString("day", outTime.get("days")),
-                toFormattedString("hour", outTime.get("hours")),
-                toFormattedString("minute", outTime.get("minutes")),
-                toFormattedString("second", outTime.get("seconds")));
+        return output.toString();
     }
 
     public static String toFormattedString(String unit, int time) {
         return String.format("%s %s", (time == 0 ? "" : time), (time == 0 ? "" : time == 1 ? unit : unit + "s"));
-    }
-
-    public static void main(String[] args) {
-        System.out.println(formatDuration(189215999)); //34400341 //205851601// 205804801
     }
 }
