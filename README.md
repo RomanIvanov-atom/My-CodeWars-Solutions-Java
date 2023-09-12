@@ -10,6 +10,7 @@ Not all of my solutions are listed.
 ## My Solutions
 | kyu | Codewars Kate                                                                        | My Solutions                                                                                                                                  |
 |-----|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| 4 | [Human readable duration format](https://www.codewars.com/kata/52742f58faf5485cae000b9a/java) | [umanReadableDurationFormat.java](https://github.com/RomanIvanov-atom/My-CodeWars-Solutions-Java/blob/main/src/main/java/kata/kyu4/HumanReadableDurationFormat.java) |
 | 4 | [Strip Comments](https://www.codewars.com/kata/51c8e37cee245da6b40000bd/java) | [StripComments.java](https://github.com/RomanIvanov-atom/My-CodeWars-Solutions-Java/blob/main/src/main/java/kata/kyu4/StripComments.java) |
 | 5 | [Tic-Tac-Toe Checker](https://www.codewars.com/kata/525caa5c1bf619d28c000335/java) | [TicTacToeChecker.java](https://github.com/RomanIvanov-atom/My-CodeWars-Solutions-Java/blob/main/src/main/java/kata/kyu5/TicTacToeChecker.java) |
 | 5 | [Josephus Permutation](https://www.codewars.com/kata/5550d638a99ddb113e0000a2/java) | [JosephusPermutation.java](https://github.com/RomanIvanov-atom/My-CodeWars-Solutions-Java/blob/main/src/main/java/kata/kyu5/JosephusPermutation.java) |
